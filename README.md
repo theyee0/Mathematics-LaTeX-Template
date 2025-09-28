@@ -17,4 +17,4 @@ When starting a latex document, create a copy of the `mlatext.cls` file and move
 ```
 \documentclass{mlatext}
 ```
-And you should be good to go.
+And you should be good to go. You can look through the class file for references to macros and theorems.
