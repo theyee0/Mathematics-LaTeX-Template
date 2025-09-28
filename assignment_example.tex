@@ -1,0 +1,115 @@
+\documentclass{mlatext}
+
+\title{Proofs Homework: Example}
+\author{Jim Chen}
+
+\begin{document}
+\maketitlepage
+\begin{qst}
+  Let $\mathfrak{U} = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$ be the universal set. Let $C = \{2, 3, 7, 9\}$. Let $D = \{3, 5, 8, 9, 10\}$. Let $E = \{1, 2, 5, 8, 9, 10\}$. List all the elements in the following sets:
+  \begin{subproblem}
+  \item $\overline{D} \cup E$
+    \begin{sol}
+      Since $\overline{D} = \{1, 2, 4, 6, 7\}$, $\overline{D} \cup E = \{1, 2, 4, 5, 6, 7, 8, 9, 10\}$.
+    \end{sol}
+  \item $C \cup (D \cap E)$
+    \begin{sol}
+      Since $D \cap E = \{5, 8, 9, 10\}$, $C \cup (D \cap E) = \{2, 3, 5, 7, 8, 9, 10\}$.
+    \end{sol}
+  \item $\overline{C \cap E}$
+    \begin{sol}
+      Since $C \cap E = \{2, 9\}$, $\overline{C \cap E} = \{1, 3, 4, 5, 6, 7, 8, 10\}$.
+    \end{sol}
+  \item $(C \cup E) - D$
+    \begin{sol}
+      Since $C \cup E = \{1, 2, 3, 5, 7, 8, 9, 10\}$, $(C \cup E) - D = \{1, 2, 7\}$.
+    \end{sol}
+  \end{subproblem}
+\end{qst}
+
+\begin{qst}
+  Prove the following statement:
+  \begin{equation}
+    \text{For all integers } x, y, z, \text{ if } 7x^2 - 3y - z + 5xy + y^2z \text{ is odd, then } y \text{ is odd or } (x - z) \text{ is odd.}
+  \end{equation}
+
+  \begin{sol}
+    We prove the contrapositive:
+    \begin{equation}
+      \text{For all integers } x, y, z, \text{ if } y \text{ is even and } (x - z) \text{ is odd, then } 7x^2 - 3y - z + 5xy + y^2z \text{ is even.}
+    \end{equation}
+
+    Let $x, y, z$ be arbitrary integers. Suppose that $y$ is even and that $(x - z)$ is also even. Then, $x$ and $z$ must have the same parity.
+
+    Case 1: Suppose that $x$ and $z$ are both even. Then, there must exist integers $k, l, m$ such that $y = 2k, x = 2m, z = 2l$. Now:
+    \begin{align*}
+      &7x^2 - 3y - z + 5xy + y^2z\\
+      = &7(2m)^2 - 3(2k) - 2l + 5(2m)(2k) + (2k)^2(2l)\\
+      = &28m^2 - 6k - 2l + 20mk + 8k^2l\\
+      = &2(14m^2 - 3k - l + 10mk + 4k^2l)
+    \end{align*}
+    Since $14m^2 - 3k - l + 10mk + 4k^2l$ is an integer, by the definition of divisibility, this is even.
+
+    Case 2: Suppose that $x, z$ are both odd. Then, there muxt exist integers $k, l, m$ such that $y = 2k, x = 2m + 1, z = 2l + 1$. Now:
+    \begin{align*}
+      &7x^2 - 3y - z + 5xy + y^2z\\
+      = &7(2m + 1)^2 - 3(2k) - (2l + 1) + 5(2m + 1)(2k) + (2k)^2(2l + 1)\\
+      = &7(4m^2 + 4m + 1) - 6k - 2l - 1 + 5(4mk + 2k) + 8k^2l + 4k^2\\
+      = &2(14m^2 + 14m - 3k - l + 10mk + 5k + 4k^2l + 2k^2 + 3)
+    \end{align*}
+    This is even since $(14m^2 + 14m - 3k - l + 10mk + 5k + 4k^2l + 2k^2 + 3)$ is an integer.
+
+    Through these two cases we have thus proved the contrapositive and thus the original implication must also be true.
+  \end{sol}
+\end{qst}
+
+\begin{qst}
+  Prove the following statement:
+  \begin{equation*}
+    \text{For all integers } r, s \text{, if } 14|(r + x) \text{ and } 21|r^3 \text{ then } 7 | \lvert(3r^2(r-5) + 15s^2\rvert)
+  \end{equation*}
+
+  \begin{sol}
+    Observe that $3r^2(r-5) + 15s^2 = 3r^3 - 15(r^2 - s^2)$.
+
+    Let $r, s$ be arbitrary integers. Suppose that $14 | (r + s)$ and $21 | r^3$
+
+    Observe that $r^2 - s^2 = (r + s)(r - s)$. Since $r, s \in \Z$, $(r - s) \in \Z$, so by the definition of divisibility, $(r + s) | (r^2 - s^2)$.
+
+    Since $7 | 14$ and $14 | (r + s)$ and $(r + s) | (r^2 - s^2)$, by the Transitivity of Divisibility, $7 | (r^2 - s^2)$.
+
+    Since $7 | 21$ and $21 | r^3$, by the Transitivity of Divisibility, $7 | r^3$.
+
+    Since $7 | r^3$ and $7 | (r^2 - s^2)$, by the Divisibility of Integer Combinations, we have
+    $7 | (3(r^3) - 15(r^2 - s^2))$; that is, $7 | (3r^2(r - 5) + 15s^2)$ \qed
+  \end{sol}
+\end{qst}
+
+\begin{qst}
+  Prove the statement:
+  \begin{equation*}
+    \forall x \in \Z, \left[\left(2x \neq 6\right) \Rightarrow \left(\forall x \in \Z, \exists y \in \Z, x - 7 \neq (z - y - 5)(z^2 + 1) - 4\right)\right]
+  \end{equation*}
+
+  \begin{sol}
+    We prove the contrapositive:
+    \begin{equation*}
+      \forall x \in \Z, \left[\left(\exists z \in Z, \forall y \in Z, x - 7 = (z - y + 5)(z^2 + 1) - 4\right) \Rightarrow \left(2x = 6\right)\right]
+    \end{equation*}
+
+    Let $x$ be an arbitrary integer. Suppose there exists an integer $z_0$ such that for all $y \in \Z$,
+    \begin{equation*}
+      x - 7 = (z_0 - y + 5)(z_0^2 + 1) - 4
+    \end{equation*}
+
+    Since the statement is true for all integers $y$, it is true when $y = z_0 + 5$. Therefore:
+    \begin{align*}
+      x - 7 &= (z_0 - (z_0 + 5) + 5)(z_0^2 + 1) - 4\\
+      x - 7 &= (0)(z_0^2 + 1) - 4\\
+      x - 7 &= -4\\
+      x &= 3\\
+      2x &= 6
+    \end{align*}
+  \end{sol}
+\end{qst}
+\end{document}
