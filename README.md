@@ -2,7 +2,9 @@
 LaTeX template that aims to provide consistently and beautifully typeset documents for course notes and assignments
 
 ## Examples
-Example PDFs can be found in the "Releases" section.
+Example PDFs can be found in the "Releases" section. For your convenience, they've also been added here:
+[assignment_example.pdf](https://github.com/user-attachments/files/22586425/assignment_example.pdf)
+[linear_algebra_example.pdf](https://github.com/user-attachments/files/22586428/linear_algebra_example.pdf)
 
 Two typeset documents are provided, one of linear algebra notes, and the other of a proofs assignment.
 
